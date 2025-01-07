@@ -30,7 +30,7 @@ const Home = () => {
 
   const createUser = useMutation({
     mutationFn: async (user) => {
-      axios.post("http://localhost:3000/users", user);
+      await axios.post("http://localhost:3000/users", user);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["Users"]);
